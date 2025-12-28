@@ -1,25 +1,9 @@
 #!/usr/bin/env node
-export{};
-import { Print } from "./Print";
 
-type validCommand = 
-| "add"
-| "list"
-| "delete"
-| "list"
-| "summary"
+import {Command} from 'commander';
 
-const VALID_COMMAND : readonly validCommand[] = [
-    "add",
-    "list",
-    "delete",
-    "list",
-    "summary"
-] ;
+const program = new Command();
 
-const input = process.argv.slice(2);
-const [command] : validCommand[] = input.filter((e) : e is validCommand => VALID_COMMAND.includes(e as validCommand));
+program.name('expense-tracker').description('CLI Expense Tracker').version('1.0.0');
 
-
-
-Print(command);
+program.parse();
