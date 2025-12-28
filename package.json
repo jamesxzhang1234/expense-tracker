@@ -1,0 +1,28 @@
+{
+  "name": "expense-tracker",
+  "version": "1.0.0",
+  "bin" : {
+    "tracker" : "./dist/index.js"
+  },
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build" : "tsc",
+    "start" : "node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesxzhang1234/expense-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamesxzhang1234/expense-tracker/issues"
+  },
+  "homepage": "https://github.com/jamesxzhang1234/expense-tracker#readme",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
