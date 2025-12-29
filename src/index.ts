@@ -150,7 +150,6 @@ function totalExpenses(arr : Item[]) : number {
     for (const item of arr) {
 
         totalExpenses += Number(item.amount);
-        console.log(totalExpenses);
 
     }
 
