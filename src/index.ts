@@ -48,8 +48,28 @@ program.command('delete').option('--id <number>').action(async (options) => {
 
 program.command('update').option(`--id <number>`).option(`-d, --description <name>`).option(`-a , --amount <amount>`).action(async (options) => {
 
-    const currentList : Item[] = JSON.parse(await readFile(source));
 
+    const currentList : Item[] = JSON.parse(await readFile(source));
+    const updateIndex : number = options.id-1;
+
+    if (!currentList[updateIndex]) {
+        console.error("Please enter a valid index");
+        process.exit(1);
+    }
+
+    if (!options.description && !options.amount) {
+
+        console.error(`Please enter a description/amount update (at least one field required)\nExample: tracker update --id 1 -d Burger1 -a 10`)
+        process.exit(1);
+
+    }
+
+    options.description ? currentList[updateIndex].name = options.description : null;
+    options.amount ? currentList[updateIndex].amount = options.amount : null; 
+    
+    await writeFile(source,currentList);
+    
+    console.log(`Updated ID ${options.id} to: ${currentList[updateIndex].name} with expenses of ${currentList[updateIndex].amount}`);
 
 
 })
