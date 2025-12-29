@@ -1,12 +1,21 @@
 [
   {
     "name": "burger",
-    "amount": "10",
-    "id": 1
+    "amount": "20",
+    "id": 1,
+    "date": "2025-12-29T01:29:21.271Z"
   },
   {
-    "name": "beer",
-    "amount": "100",
-    "id": 2
+    "name": "computer",
+    "amount": "200",
+    "id": 2,
+    "date": "2025-11-29T01:29:30.939Z"
+  },
+  {
+    "name": "cheese",
+    "amount": "20",
+    "id": 3,
+    "date": "2025-11-29T01:37:24.642Z",
+    "month": 11
   }
 ]
