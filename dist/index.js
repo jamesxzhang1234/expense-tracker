@@ -76,16 +76,17 @@ program.command('summary').option('--month <number>').action(async (options) => 
         process.exit(1);
     }
     for (const item of currentList) {
-        if (item.date.getMonth() === Number(options.month)) {
+        const currentMonth = new Date(item.date);
+        if ((currentMonth.getMonth() + 1) == options.month) {
             monthList.push(item);
+            console.log(`Pushed ${currentMonth.getMonth()}`);
         }
     }
     if (monthList.length === 0) {
         console.error("There are no expenses in that month!");
         process.exit(1);
     }
-    const monthIndex = monthList[0].date.getMonth();
-    console.log(`Total Expenses in ${months[monthIndex]}: $${totalExpenses(monthList)}`);
+    console.log(`Total Expenses in ${months[options.month - 1]}: $${totalExpenses(monthList)}`);
 });
 program.parse();
 function totalExpenses(arr) {
