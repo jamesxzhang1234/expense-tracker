@@ -79,7 +79,6 @@ program.command('summary').option('--month <number>').action(async (options) => 
         const currentMonth = new Date(item.date);
         if ((currentMonth.getMonth() + 1) == options.month) {
             monthList.push(item);
-            console.log(`Pushed ${currentMonth.getMonth()}`);
         }
     }
     if (monthList.length === 0) {
@@ -93,7 +92,6 @@ function totalExpenses(arr) {
     let totalExpenses = 0;
     for (const item of arr) {
         totalExpenses += Number(item.amount);
-        console.log(totalExpenses);
     }
     return totalExpenses;
 }
